@@ -1,7 +1,6 @@
 #! usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
-import Choices from "inquirer/lib/objects/choices.js";
 
 console.log(chalk.bold.italic.greenBright.bold("GAME MANIA"));
 
@@ -11,18 +10,20 @@ console.log(`You are in the ${currentLocation}.`);
 
 
 
-let q1 = await inquirer.prompt([
+let q1= await inquirer.prompt([
   {
     name: "q1",
     type: "list",
     choices: ["Start", "Quit"],
     message: "What do you want?",
   }]);
-
-   if(q1.q1 === "Quit"){
-  console.log("Thanks for playing GoodBye!")}
+  if(q1.q1=== "Start"){
+    console.log("you are in ManiaForest");
   
-let q2 = await inquirer.prompt([{
+  // }if(q1.q1=== "Quit"){
+  // console.log("Thanks for playing GoodBye!")}
+  
+ let q2 = await inquirer.prompt([{
     name: "Start",
     type: "list",
     choices: ["River", "Cave", "Road"],
@@ -38,7 +39,7 @@ if (q2.Start === "River") {
   console.log(".....River water is very cold.....");
   console.log(`You are in river underwater wow! \n you are good swimmer`);
   console.log("Finally you see a Sword of GOld YEAHHH..");
-  console.log(chalk.green.bold("CONGRATULATIONS"));}
+   console.log(chalk.green.bold("CONGRATULATIONS"));}
 
 //   // if(q1.q1 === "Quit"){
 //   //   console.log("Thanks for playing GoodBye!")}
@@ -54,8 +55,12 @@ if (q2.Start === "River") {
   console.log(" Bad luck!!! \n Here is a big traffic on a road")
  
  }
+} 
+else{
+  console.log("Thanks for playing GOODBye!!!")
+}
 
-
+  
 
    
 
